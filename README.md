@@ -1,70 +1,187 @@
-# React.js and Tailwind CSS Assignment
+# My React App
 
-This assignment focuses on building a responsive React application using JSX and Tailwind CSS, implementing component architecture, state management, hooks, and API integration.
+A responsive React application built with Vite, demonstrating component architecture, state management, hooks usage, and API integration using Tailwind CSS.
 
-## Assignment Overview
+## Features
 
-You will:
-1. Set up a React project with Vite and Tailwind CSS
-2. Create reusable UI components
-3. Implement state management using React hooks
-4. Integrate with external APIs
-5. Style your application using Tailwind CSS
+- **Component Architecture**: Reusable UI components (Button, Card, Navbar, Footer, Layout)
+- **State Management**: React hooks (useState, useEffect, useContext) for managing application state
+- **Task Management**: Add, complete, delete, and filter tasks with local storage persistence
+- **API Integration**: Fetch data from JSONPlaceholder API with search and pagination
+- **Responsive Design**: Mobile-first design using Tailwind CSS
+- **Dark Mode**: Theme switching with context API
+- **Routing**: Client-side routing with React Router
+
+## Tech Stack
+
+- **Frontend Framework**: React 19
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **Routing**: React Router DOM
+- **API**: JSONPlaceholder API
+- **Linting**: ESLint
+- **PostCSS**: Autoprefixer
 
 ## Getting Started
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install dependencies:
+### Prerequisites
+
+Before you begin, ensure you have the following installed on your system:
+
+- **Node.js**: Version 18 or higher (Download from [nodejs.org](https://nodejs.org/))
+- **npm**: Comes with Node.js (or use Yarn if preferred)
+- **Git**: For cloning the repository
+
+You can check your versions by running:
+```bash
+node --version
+npm --version
+git --version
+```
+
+### Environment Setup
+
+1. **Clone the Repository**:
+   ```bash
+   git clone <repository-url>
+   cd my-app
    ```
+
+2. **Install Dependencies**:
+   ```bash
    npm install
    ```
-4. Start the development server:
-   ```
+   This will install all the required dependencies listed in `package.json`.
+
+### Running the Application
+
+1. **Start the Development Server**:
+   ```bash
    npm run dev
    ```
+   The development server will start on `http://localhost:5173` by default.
 
-## Files Included
+2. **Open in Browser**:
+   Navigate to [http://localhost:5173](http://localhost:5173) in your web browser.
 
-- `Week3-Assignment.md`: Detailed assignment instructions
-- Starter files for your React application:
-  - Basic project structure
-  - Pre-configured Tailwind CSS
-  - Sample component templates
+3. **Stop the Server**:
+   Press `Ctrl + C` in the terminal to stop the development server.
 
-## Requirements
+### Building for Production
 
-- Node.js (v18 or higher)
-- npm or yarn
-- Modern web browser
-- Code editor (VS Code recommended)
+1. **Build the Application**:
+   ```bash
+   npm run build
+   ```
+   This creates an optimized production build in the `dist` folder.
+
+2. **Preview the Production Build**:
+   ```bash
+   npm run preview
+   ```
+   This serves the production build locally for testing.
+
+### Linting
+
+Run ESLint to check for code quality issues:
+```bash
+npm run lint
+```
+
+### Troubleshooting
+
+- **Port Already in Use**: If port 5173 is busy, Vite will automatically suggest an alternative port. Or specify a custom port:
+  ```bash
+  npm run dev -- --port 3000
+  ```
+
+- **Dependencies Issues**: If you encounter dependency conflicts, try clearing the cache:
+  ```bash
+  rm -rf node_modules package-lock.json
+  npm install
+  ```
+
+- **Build Errors**: Ensure all dependencies are installed and Node.js version is compatible.
+
+- **Browser Issues**: Clear browser cache or try an incognito window if changes aren't reflecting.
 
 ## Project Structure
 
 ```
-src/
-├── components/       # Reusable UI components
-├── pages/           # Page components
-├── hooks/           # Custom React hooks
-├── context/         # React context providers
-├── api/             # API integration functions
-├── utils/           # Utility functions
-└── App.jsx          # Main application component
+my-app/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── Button.jsx
+│   │   ├── Card.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Layout.jsx
+│   │   └── Navbar.jsx
+│   ├── context/
+│   │   └── ThemeContext.jsx
+│   ├── hooks/
+│   │   └── useLocalStorage.js
+│   ├── pages/
+│   │   ├── ApiList.jsx
+│   │   ├── Home.jsx
+│   │   ├── TaskManager.jsx
+│   │   └── Tasks.jsx
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsxDeployment
+├── tailwind.config.js
+├── postcss.config.js
+└── package.json
 ```
 
-## Submission
+## Available Scripts
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+In the project directory, you can run the following commands:
 
-1. Complete all required components and features
-2. Implement proper state management with hooks
-3. Integrate with at least one external API
-4. Style your application with Tailwind CSS
-5. Deploy your application and add the URL to your README.md
+- `npm run dev` - Starts the development server using Vite. Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
+- `npm run build` - Builds the app for production to the `dist` folder. It correctly bundles React in production mode and optimizes the build for the best performance.
+- `npm run preview` - Locally previews the production build from the `dist` folder.
+- `npm run lint` - Runs ESLint to check for code quality and style issues in JavaScript and JSX files.
 
-## Resources
+### Netlify Deployment
 
-- [React Documentation](https://react.dev/)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [Vite Documentation](https://vitejs.dev/guide/)
-- [React Router Documentation](https://reactrouter.com/) 
+This app is deployed:
+(https://apans0.netlify.app/)
+
+
+### GitHub Pages Deployment
+
+1. **Install gh-pages**:
+   ```bash
+   npm install --save-dev gh-pages
+   ```
+
+2. **Update package.json**:
+   Add these scripts:
+   ```json
+   "scripts": {
+     "predeploy": "npm run build",
+     "deploy": "gh-pages -d dist"
+   }
+   ```
+
+3. **Deploy**:
+   ```bash
+   npm run deploy
+   ```
+
+4. **Configure GitHub Pages**:
+   - Go to your repository settings.
+   - Under "Pages", select "Deploy from a branch" and choose `gh-pages`.
+
+## Screenshots
+
+### Home Page
+![Home Page](screenshots/home.png)
+
+### Task Manager
+![Task Manager](screenshots/tasks.png)
+
+### API Integration
+![API List](screenshots/api.png)
+
